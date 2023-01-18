@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'XenAzureBLR'
 - task: Maven@3
   inputs:
     mavenPomFile: '$(Build.SourcesDirectory)/pom.xml'
